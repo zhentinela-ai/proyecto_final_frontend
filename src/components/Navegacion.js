@@ -1,8 +1,11 @@
 import logo from "../images/logo.png";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useModal } from "../context/ModalContext";
 
-export default function Navegacion() {
+const Navegacion = () => {
 	const navigate = useNavigate();
+
+	const { abrirModal } = useModal();
 
 	return (
 		<div className="font-family-charis-sil">
@@ -34,26 +37,26 @@ export default function Navegacion() {
 							</ul>
 						</div>
 						<div className="form-input">
-							{/* <button
+							<button
 								className="btn btn-secondary btn-hover"
-								onClick={() => navigate("#modal")}
+								onClick={abrirModal}
 							>
 								Contacto
-							</button> */}
-							<a
+							</button>
+							{/* <a
 								href="#modal"
 								className="btn btn-secondary btn-hover"
 							>
 								Contacto
-							</a>
+							</a> */}
 							<button
-								className="btn btn-secondary btn-hover-brillo"
+								className="btn btn-secondary"
 								onClick={() => navigate("/inicio_sesion")}
 							>
 								Inicio Sesion
 							</button>
 							<button
-								className="btn btn-secondary btn-hover-brillo"
+								className="btn btn-secondary"
 								onClick={() => navigate("/registro")}
 							>
 								Registro
@@ -64,4 +67,6 @@ export default function Navegacion() {
 			</header>
 		</div>
 	);
-}
+};
+
+export default Navegacion;

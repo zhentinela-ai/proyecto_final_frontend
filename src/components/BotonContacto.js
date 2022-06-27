@@ -1,32 +1,56 @@
 import { VscEyeClosed } from "react-icons/vsc";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { useModal } from "../context/ModalContext";
 
 export default function BotonContacto() {
-	const navigate = useNavigate();
+	const { abrir, abrirModal } = useModal();
+
+	const modalStyles = {
+		position: "absolute",
+		top: "50%",
+		left: "50%",
+		transform: "translate(-50%, -50%)",
+		// background: "rgba(0, 0, 0, 0.8)",
+		// position: "fixed",
+		// top: "0",
+		// right: "0",
+		// bottom: "0",
+		// left: "0",
+		// opacity: "0",
+		// "pointer-events": "none",
+		// transition: "all 1s",
+	};
 
 	return (
 		<div className="container">
-			<div className="modal" id="modal">
-				<div className="modal-contenido">
-					<div className="form-input justify-content-between">
-						<h2>Contacto</h2>
-						<NavLink to="#modal">
-							<VscEyeClosed />
-						</NavLink>
-					</div>
+			<div className={abrir === true ? "" : ""}>
+				<Modal isOpen={abrir} style={modalStyles}>
+					<ModalHeader>
+						<div className="form-input justify-content-between">
+							<h2>Contacto</h2>
+							<NavLink to="#!" onClick={abrirModal}>
+								<VscEyeClosed />
+							</NavLink>
+						</div>
+					</ModalHeader>
 					<hr />
-					<div className="form-group text-center">
-						<p>contacto@oye.com</p>
-						<p>+57 - 321 - 753 - 7816</p>
-					</div>
+					<ModalBody>
+						<div className="form-group text-center">
+							<p>contacto@oye.com</p>
+							<p>+57 - 321 - 753 - 7816</p>
+						</div>
+					</ModalBody>
 					<hr />
-					<button
-						className="btn btn-primary"
-						onClick={() => navigate("#ocultarModal")}
-					>
-						Cerrar
-					</button>
-				</div>
+					<ModalFooter>
+						<button
+							className="btn btn-primary"
+							onClick={abrirModal}
+						>
+							Cerrar
+						</button>
+					</ModalFooter>
+				</Modal>
 			</div>
 		</div>
 	);

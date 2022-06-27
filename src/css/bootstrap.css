@@ -41,6 +41,11 @@ header {
 	margin: 0;
 }
 
+input {
+	height: 22px;
+	font-size: 16px;
+}
+
 .navegacion {
 	outline: none;
 	text-decoration: none;
@@ -50,6 +55,14 @@ header {
 
 .font-family-joan {
 	font-family: "Joan", serif;
+}
+
+.text-success {
+	color: green;
+}
+
+.text-danger {
+	color: red;
 }
 
 .font-family-charis-sil {
@@ -117,6 +130,10 @@ header {
 
 .mx-4 {
 	margin: 0 4vw;
+}
+
+.p-2 {
+	margin: 4px 12px;
 }
 
 .row {
@@ -268,6 +285,14 @@ p {
 	margin: 3px 3pc;
 }
 
+.w-40 {
+	width: 40%;
+}
+
+.m-auto {
+	margin: 6px auto;
+}
+
 .carrusel-item {
 	height: 100%;
 }
@@ -318,7 +343,7 @@ img {
 	text-align: center;
 }
 
-.btn-hover-brillo:hover {
+.btn:hover {
 	filter: saturate(200%);
 }
 
@@ -343,40 +368,9 @@ td {
 	display: none;
 }
 
-.modal-contenido {
-	background: #1d1d1d;
-	width: 250px;
-	padding: 10px 20px;
-	margin: 20% auto;
-	position: relative;
-}
-
-.modal {
-	background-color: rgba(0, 0, 0, 0.8);
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	opacity: 0;
-	pointer-events: none;
-	transition: all 1s;
-}
-
-#modal:target {
-	opacity: 1;
-	pointer-events: auto;
-}
-
-#ocultarModal {
-	opacity: 1;
-	pointer-events: none;
-}
-
 a {
 	text-decoration-line: none;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-

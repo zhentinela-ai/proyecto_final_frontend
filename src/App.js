@@ -10,14 +10,18 @@ import InicioSesion from "./pages/InicioSesion";
 // Se importa los Componentes
 import Navegacion from "./components/Navegacion";
 import BotonContacto from "./components/BotonContacto";
+import { ModalProvider } from "./context/ModalContext";
+import PiePagina from "./components/PiePagina";
 
 function App() {
 	return (
 		<div className="font-family-joan">
 			<BrowserRouter>
-				<Navegacion />
+				<ModalProvider>
+					<Navegacion />
+					<BotonContacto />
+				</ModalProvider>
 
-				<BotonContacto />
 
 				<Routes>
 					<Route path="/" element={<Inicio />} />
@@ -25,6 +29,8 @@ function App() {
 					<Route path="/registro" element={<Registro />} />
 					<Route path="/inicio_sesion" element={<InicioSesion />} />
 				</Routes>
+
+				<PiePagina />
 			</BrowserRouter>
 		</div>
 	);

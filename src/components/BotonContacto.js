@@ -7,51 +7,50 @@ export default function BotonContacto() {
 	const { abrir, abrirModal } = useModal();
 
 	const modalStyles = {
-		position: "absolute",
 		top: "50%",
 		left: "50%",
 		transform: "translate(-50%, -50%)",
-		// background: "rgba(0, 0, 0, 0.8)",
-		// position: "fixed",
-		// top: "0",
-		// right: "0",
-		// bottom: "0",
-		// left: "0",
-		// opacity: "0",
-		// "pointer-events": "none",
-		// transition: "all 1s",
+		background: "rgba(0, 0, 0, 0.8)",
+		position: "fixed",
+		width: "100%",
+		height: "100%",
+		transition: "all 1s",
 	};
 
 	return (
 		<div className="container">
-			<div className={abrir === true ? "" : ""}>
-				<Modal isOpen={abrir} style={modalStyles}>
-					<ModalHeader>
-						<div className="form-input justify-content-between">
-							<h2>Contacto</h2>
-							<NavLink to="#!" onClick={abrirModal}>
-								<VscEyeClosed />
-							</NavLink>
-						</div>
-					</ModalHeader>
+			<Modal isOpen={abrir} style={modalStyles}>
+				<div className="card w-30">
+					<div className="card-header">
+						<ModalHeader className="w-100">
+							<div className="form-input d-flex justify-content-between">
+								<h2>Contacto</h2>
+								<NavLink to="#!" onClick={abrirModal}>
+									<VscEyeClosed className="size-30" />
+								</NavLink>
+							</div>
+						</ModalHeader>
+					</div>
 					<hr />
-					<ModalBody>
-						<div className="form-group text-center">
-							<p>contacto@oye.com</p>
-							<p>+57 - 321 - 753 - 7816</p>
-						</div>
-					</ModalBody>
+					<div className="card-body">
+						<ModalBody>
+							<div className="form-group text-center">
+								<p>contacto@oye.com</p>
+								<p>+57 - 321 - 753 - 7816</p>
+							</div>
+						</ModalBody>
+					</div>
 					<hr />
-					<ModalFooter>
+					<ModalFooter className="d-flex justify-content-center">
 						<button
-							className="btn btn-primary"
+							className="btn btn-primary p-2 m-3"
 							onClick={abrirModal}
 						>
 							Cerrar
 						</button>
 					</ModalFooter>
-				</Modal>
-			</div>
+				</div>
+			</Modal>
 		</div>
 	);
 }

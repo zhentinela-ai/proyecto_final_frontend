@@ -17,7 +17,7 @@ const Navegacion = () => {
 							<h1 className="titulo-h1 text-blue">OYE</h1>
 						</div>
 						<div className="form-input">
-							<ul>
+							<ul className="m-auto">
 								<li>
 									<NavLink
 										className="navegacion bg-dark"
@@ -26,6 +26,8 @@ const Navegacion = () => {
 										Inicio
 									</NavLink>
 								</li>
+							</ul>
+							<ul>
 								<li>
 									<NavLink
 										className="navegacion bg-dark"

@@ -15,7 +15,7 @@ import PiePagina from "./components/PiePagina";
 
 function App() {
 	return (
-		<div className="font-family-joan">
+		<div className="font-family-joan vh-100">
 			<BrowserRouter>
 				<ModalProvider>
 					<Navegacion />

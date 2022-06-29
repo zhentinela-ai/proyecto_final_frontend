@@ -3,7 +3,11 @@ import icon_2 from "../images/icon_2.svg";
 import icon_3 from "../images/icon_3.svg";
 import icon_4 from "../images/icon_4.svg";
 
+import { FcSearch } from "react-icons/fc";
+
 import "../js/buscador";
+
+import styles from "../css/inputs.module.css";
 
 import datos from "../datos.json";
 
@@ -18,13 +22,21 @@ export default function Canciones() {
 	return (
 		<div className="container d-flex mx-4">
 			<h1>Canciones</h1>
-			<input
-				type="text"
-				className="m-1"
-				id="buscador"
-				placeholder="buscar..."
-				autoFocus
-			/>
+			<div className={styles.container}>
+				<FcSearch
+					className={styles.icon}
+					onClick={function toDashboard() {
+						document.getElementById("buscador").focus();
+					}}
+				/>
+				<input
+					type="text"
+					className={styles.input}
+					id="buscador"
+					placeholder="buscar..."
+					autoFocus
+				/>
+			</div>
 			<div className="row">
 				{datos.canciones.map((cancion, i) => (
 					<div className="col-md-4 cancion" key={i}>

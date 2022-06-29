@@ -9,7 +9,6 @@ export const ModalProvider = ({ children }) => {
 
 	const abrirModal = () => {
 		setAbrir(!abrir);
-		console.log(abrir);
 	};
 
 	return (

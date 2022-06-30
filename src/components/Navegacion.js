@@ -45,12 +45,6 @@ const Navegacion = () => {
 							>
 								Contacto
 							</button>
-							{/* <a
-								href="#modal"
-								className="btn btn-secondary btn-hover"
-							>
-								Contacto
-							</a> */}
 							<button
 								className="btn btn-secondary"
 								onClick={() => navigate("/inicio_sesion")}

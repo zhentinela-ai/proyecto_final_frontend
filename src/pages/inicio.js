@@ -4,11 +4,14 @@ import reel_3 from "../images/reel_3.jpg";
 import reel_4 from "../images/reel_4.jpg";
 
 import datos from "../datos.json";
+import { useNavigate } from "react-router-dom";
 
 const canciones = datos.canciones;
 const top3 = canciones.filter((dato) => dato.reproducciones >= 70);
 
 export default function Inicio() {
+	const navigate = useNavigate()
+
 	return (
 		<div>
 			<div className="container">
@@ -23,7 +26,7 @@ export default function Inicio() {
 								<p className="m-3">
 									Aquí podrás escuchar música cuando lo desees
 								</p>
-								<button className="btn btn-primary btn-hover-brillo m-3">
+								<button className="btn btn-primary btn-hover-brillo m-3" onClick={() => navigate("/canciones")}>
 									Ver Canciones
 								</button>
 							</div>

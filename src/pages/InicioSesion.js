@@ -25,9 +25,14 @@ export default function InicioSesion() {
 									className={styles.input_register}
 									placeholder="Correo electrónico"
 									autoFocus
-									onChange={validarCorreo}
+									onChange={(e) =>
+										validarCorreo(e.target.value)
+									}
 								/>
-								<GiSoundWaves className={styles.icon_right} id="icono_email" />
+								<GiSoundWaves
+									className={styles.icon_right}
+									id="icono_email"
+								/>
 							</div>
 							<span className={"p-2"} id="emailOK"></span>
 							<label className="p-2">Contraseña</label>
@@ -37,9 +42,14 @@ export default function InicioSesion() {
 									type="password"
 									className={styles.input_register}
 									placeholder="Contraseña"
-									onChange={validarConstraseña}
+									onChange={(e) =>
+										validarConstraseña(e.target.value)
+									}
 								/>
-								<GiSoundWaves className={styles.icon_right} id="icono_password" />
+								<GiSoundWaves
+									className={styles.icon_right}
+									id="icono_password"
+								/>
 							</div>
 							<span className="p-2" id="passwordOK"></span>
 							<button

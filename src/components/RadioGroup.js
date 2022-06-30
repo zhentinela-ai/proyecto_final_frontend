@@ -1,9 +1,27 @@
 import { useState } from "react";
+import { validarEdad } from "../js/validaciones";
 
 export function RadioGroup() {
-	const [menorA, setMenorA] = useState(false);
-	const [entre, setEntre] = useState(false);
-	const [mayorA, setMayorA] = useState(false);
+	const [menorA, setMenorA] = useState(true);
+	const [entre, setEntre] = useState(true);
+	const [mayorA, setMayorA] = useState(true);
+
+	const seleccion = () => {
+		if (menorA === true && entre === true && mayorA === true) {
+			return false;
+		} else {
+			return true;
+		}
+	};
+
+	const validacion = () => {
+		const seleccionar = seleccion();
+		if (seleccionar === true) {
+			validarEdad(false);
+		} else {
+			validarEdad(true);
+		}
+	};
 
 	return (
 		<div className="form-group">
@@ -13,12 +31,22 @@ export function RadioGroup() {
 					<input
 						type="radio"
 						className="p-2"
-						checked={menorA}
+						id="menor"
+						checked={!menorA}
 						onClick={() => {
 							setMenorA(!menorA);
-							setEntre(false);
-							setMayorA(false);
+							setEntre(true);
+							setMayorA(true);
+							validacion();
 						}}
+						onFocus={
+							(menorA === true) &
+							(entre === true) &
+							(mayorA === true)
+								? () => validarEdad([true, true, true])
+								: () => {}
+						}
+						readOnly
 					/>
 					<label>Menor a 20</label>
 				</div>
@@ -26,12 +54,22 @@ export function RadioGroup() {
 					<input
 						type="radio"
 						className="p-2"
-						checked={entre}
+						checked={!entre}
+						id="entre"
 						onClick={() => {
 							setEntre(!entre);
-							setMenorA(false);
-							setMayorA(false);
+							setMenorA(true);
+							setMayorA(true);
+							validacion()
 						}}
+						onFocus={
+							(menorA === true) &
+							(entre === true) &
+							(mayorA === true)
+								? () => validarEdad([true, true, true])
+								: () => {}
+						}
+						readOnly
 					/>
 					<label>20 a 40</label>
 				</div>
@@ -39,16 +77,26 @@ export function RadioGroup() {
 					<input
 						type="radio"
 						className="p-2"
-						checked={mayorA}
+						checked={!mayorA}
+						id="mayor"
 						onClick={() => {
 							setMayorA(!mayorA);
-							setEntre(false);
-							setMenorA(false);
+							setEntre(true);
+							setMenorA(true);
+							validacion()
 						}}
+						onFocus={
+							(menorA === true) &
+							(entre === true) &
+							(mayorA === true)
+								? () => validarEdad([true, true, true])
+								: () => {}
+						}
+						readOnly
 					/>
 					<label>Mayor a 50</label>
-					<span className="p-2" id="passwordOK"></span>
 				</div>
+				<span className="p-2" id="edadOK"></span>
 			</fieldset>
 		</div>
 	);

@@ -13,7 +13,7 @@ export function Dropdown() {
 				onClick={() => setSeleccionar(!seleccionar)}
 				onFocus={validarGenero}
 				onChange={(e) => {
-					validarGenero(e)
+					validarGenero(e.target.value)
 					setSeleccionar(!seleccionar)
 				}}
 			>

@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.c7f41920.css",
-    "main.js": "/static/js/main.76f23817.js",
-    "static/media/reel_1.jpg": "/static/media/reel_1.d0396563574616edc8bf.jpg",
-    "static/media/reel_3.jpg": "/static/media/reel_3.2f79690621fbf5be6fbb.jpg",
-    "static/media/reel_4.jpg": "/static/media/reel_4.5c8027e8749cb4fbdd6d.jpg",
-    "static/media/reel_2.jpg": "/static/media/reel_2.3b438caf2830a33b7830.jpg",
-    "static/media/icon_4.svg": "/static/media/icon_4.d225488c73cd466f5eb9a481de040528.svg",
-    "static/media/icon_2.svg": "/static/media/icon_2.4d6b8299c437cafdfd90c72eb14b2858.svg",
-    "static/media/icon_1.svg": "/static/media/icon_1.a2f69872f9f90b3ede93d406842a128d.svg",
-    "static/media/icon_3.svg": "/static/media/icon_3.e5b6ff71cfd3b338a7177f378b6c649d.svg",
-    "index.html": "/index.html",
-    "main.c7f41920.css.map": "/static/css/main.c7f41920.css.map",
-    "main.76f23817.js.map": "/static/js/main.76f23817.js.map"
+    "main.css": "/proyecto_final_frontend/static/css/main.c7f41920.css",
+    "main.js": "/proyecto_final_frontend/static/js/main.13248cb6.js",
+    "static/media/reel_1.jpg": "/proyecto_final_frontend/static/media/reel_1.d0396563574616edc8bf.jpg",
+    "static/media/reel_3.jpg": "/proyecto_final_frontend/static/media/reel_3.2f79690621fbf5be6fbb.jpg",
+    "static/media/reel_4.jpg": "/proyecto_final_frontend/static/media/reel_4.5c8027e8749cb4fbdd6d.jpg",
+    "static/media/reel_2.jpg": "/proyecto_final_frontend/static/media/reel_2.3b438caf2830a33b7830.jpg",
+    "static/media/icon_4.svg": "/proyecto_final_frontend/static/media/icon_4.d225488c73cd466f5eb9a481de040528.svg",
+    "static/media/icon_2.svg": "/proyecto_final_frontend/static/media/icon_2.4d6b8299c437cafdfd90c72eb14b2858.svg",
+    "static/media/icon_1.svg": "/proyecto_final_frontend/static/media/icon_1.a2f69872f9f90b3ede93d406842a128d.svg",
+    "static/media/icon_3.svg": "/proyecto_final_frontend/static/media/icon_3.e5b6ff71cfd3b338a7177f378b6c649d.svg",
+    "index.html": "/proyecto_final_frontend/index.html",
+    "main.c7f41920.css.map": "/proyecto_final_frontend/static/css/main.c7f41920.css.map",
+    "main.13248cb6.js.map": "/proyecto_final_frontend/static/js/main.13248cb6.js.map"
   },
   "entrypoints": [
     "static/css/main.c7f41920.css",
-    "static/js/main.76f23817.js"
+    "static/js/main.13248cb6.js"
   ]
 }

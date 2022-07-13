@@ -4,10 +4,19 @@ import { GiSoundWaves } from "react-icons/gi";
 
 import styles from "../css/inputs.module.css";
 
+import { ToastContainer, toast } from "react-toastify";
+
 export default function InicioSesion() {
+	const notify = () => toast("¡Bienvenido a OYE!");
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		alert("Bienvenido a OYE");
+		if (
+			validarCorreo(e.target[0].value) &&
+			validarConstraseña(e.target[1].value)
+		) {
+			notify();
+		}
 	};
 
 	return (
@@ -35,6 +44,7 @@ export default function InicioSesion() {
 								/>
 							</div>
 							<span className={"p-2"} id="emailOK"></span>
+
 							<label className="p-2">Contraseña</label>
 
 							<div className={styles.container}>
@@ -52,12 +62,14 @@ export default function InicioSesion() {
 								/>
 							</div>
 							<span className="p-2" id="passwordOK"></span>
+
 							<button
 								className="btn btn-primary p-2 m-auto"
 								id="validar"
 							>
 								Continuar
 							</button>
+							<ToastContainer autoClose={1500} />
 						</div>
 					</div>
 				</div>

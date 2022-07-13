@@ -74,9 +74,10 @@ export const validarConfirmacionConstraseña = (value) => {
 	}
 };
 
-export const validarGenero = (value) => {
-	var genero = value;
+export const validarGenero = (target) => {
+	var genero = target.value;
 	var valido = document.getElementById("generoOK");
+
 	if (genero === "seleccionar") {
 		valido.innerText = "Debes seleccionar un género";
 		valido.style.color = "red";
@@ -90,30 +91,30 @@ export const validarGenero = (value) => {
 export const validarEdad = (rango) => {
 	var valido = document.getElementById("edadOK");
 
-	if (rango === false) {
-		valido.innerText = "";
-		return true;
-	} else {
+	if (rango) {
 		valido.innerText = "Debes seleccionar un rango de edad";
 		valido.style.color = "red";
+		return true;
+	} else {
+		valido.innerText = "";
 		return false;
 	}
 };
 
-export const validarTerminos = (current, change) => {
+export const validarTerminos = (change) => {
 	var valido = document.getElementById("terminosOK");
+	var terminos = document.getElementById("terminos");
 
-	console.log(current.checked);
 	if (change === true) {
-		if (current.checked === false) {
-			current.value = "on";
+		if (!terminos.checked) {
 			valido.innerText = "Debes aceptar los términos";
 			valido.style.color = "red";
+			terminos.value = "on";
 			return false;
 		}
-		if (current.checked === true) {
+		if (terminos.checked) {
 			valido.innerText = "";
-			current.value = "off";
+			terminos.value = "off";
 			return true;
 		}
 	} else {

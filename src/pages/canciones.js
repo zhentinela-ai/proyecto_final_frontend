@@ -39,7 +39,7 @@ export default function Canciones() {
 			</div>
 			<div className="row">
 				{datos.canciones.map((cancion, i) => (
-					<div className="col-md-4 cancion" key={i}>
+					<div className="col-md-4 col-sm col-md-2 cancion" key={i}>
 						<div className="card">
 							<div className="card-header">
 								<img
@@ -55,7 +55,7 @@ export default function Canciones() {
 							<div className="card-body text-center">
 								<p>{cancion.nombre}</p>
 								<audio
-									src={`/${cancion.ruta}`}
+									src={`/canciones/${cancion.ruta}`}
 									controls
 									className="w-90 m-1"
 								></audio>

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { validarGenero } from "../js/validaciones";
 
-export function Dropdown() {
+export function Genero() {
 	const [seleccionar, setSeleccionar] = useState(false);
+
 	return (
 		<div className="form-group">
 			<label className="p-2">Género musical favorito *</label>
@@ -11,10 +12,10 @@ export function Dropdown() {
 				name="genero"
 				id="genero"
 				onClick={() => setSeleccionar(!seleccionar)}
-				onFocus={validarGenero}
+				onFocus={(e) => validarGenero(e.target)}
 				onChange={(e) => {
-					validarGenero(e.target.value)
-					setSeleccionar(!seleccionar)
+					validarGenero(e.target);
+					setSeleccionar(!seleccionar);
 				}}
 			>
 				<option value="seleccionar" disabled={seleccionar}>

@@ -54,7 +54,6 @@ function VerContraseña() {
 						placeholder="Contraseña"
 						onBlur={(e) => {
 							const validar = validarConstraseña(e.target.value);
-							console.log(validar);
 							if (validar === true) {
 								passwordOK.current.innerText = "";
 							}

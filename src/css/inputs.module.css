@@ -1,7 +1,7 @@
 .container {
 	position: relative;
 	margin: auto;
-	width: 100%;
+	width: 90%;
 }
 
 .input {
@@ -39,4 +39,10 @@
 	top: 50%;
 	transform: translateY(-50%);
 	cursor: pointer;
+}
+
+@media (max-width: 820px) {
+	.icon_right {
+		width: 35px;
+	}
 }

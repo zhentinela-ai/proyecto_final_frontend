@@ -1,4 +1,5 @@
 /* eslint-disable no-restricted-globals */
+import { toast } from "react-toastify";
 import {
 	validarTerminos,
 	validarGenero,
@@ -10,6 +11,8 @@ import {
 
 export const validar = (e) => {
 	e.preventDefault();
+	const notify = () => toast("Registro exitoso");
+
 	if (!validarCorreo(e.target[0].value) === true) {
 		e.target[0].autofocus = true;
 		location.href = "#email";
@@ -23,7 +26,7 @@ export const validar = (e) => {
 		location.href = "#passwordConfirm";
 		return false;
 	}
-	if (!validarGenero(e.target[3].value)) {
+	if (!validarGenero(e.target[3])) {
 		location.href = "#genero";
 		return false;
 	}
@@ -35,10 +38,10 @@ export const validar = (e) => {
 		location.href = "#menor";
 		return false;
 	}
-	if (!validarTerminos(e.target[8], true)) {
+	if (!validarTerminos(true)) {
 		location.href = "#terminos";
 		return false;
 	}
-	alert("Registro exitoso");
+	notify()
 	return true;
 };

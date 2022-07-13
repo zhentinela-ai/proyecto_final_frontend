@@ -4,7 +4,7 @@ import { useModal } from "../context/ModalContext";
 
 import { BsMenuUp } from "react-icons/bs";
 
-const Navegacion = ({abrirMenu}) => {
+const Navegacion = ({ abrirMenu, setMenu, menu }) => {
 	const navigate = useNavigate();
 
 	const { abrirModal } = useModal();
@@ -22,6 +22,8 @@ const Navegacion = ({abrirMenu}) => {
 							type="checkbox"
 							id="menu-bar"
 							onClick={abrirMenu}
+							readOnly
+							checked={menu}
 						/>
 						<label htmlFor="menu-bar">
 							<BsMenuUp
@@ -38,6 +40,7 @@ const Navegacion = ({abrirMenu}) => {
 									<li>
 										<NavLink
 											className="navegacion bg-dark"
+											onClick={() => setMenu(false)}
 											to="/"
 										>
 											Inicio
@@ -48,6 +51,7 @@ const Navegacion = ({abrirMenu}) => {
 									<li>
 										<NavLink
 											className="navegacion bg-dark"
+											onClick={() => setMenu(false)}
 											to="/canciones"
 										>
 											Canciones
@@ -64,13 +68,21 @@ const Navegacion = ({abrirMenu}) => {
 								</button>
 								<button
 									className="btn btn-secondary"
-									onClick={() => navigate("/inicio_sesion")}
+									id="inicio_sesion"
+									onClick={() => {
+										setMenu(false);
+										navigate("/inicio_sesion");
+									}}
 								>
 									Inicio Sesion
 								</button>
 								<button
 									className="btn btn-secondary"
-									onClick={() => navigate("/registro")}
+									id="registro"
+									onClick={() => {
+										setMenu(false);
+										navigate("/registro");
+									}}
 								>
 									Registro
 								</button>

@@ -26,7 +26,7 @@ export default function Inicio() {
 								Aquí podrás escuchar música cuando lo desees
 							</p>
 							<button
-								className="btn btn-primary btn-hover-brillo m-3"
+								className="btn btn-primary m-3"
 								onClick={() => navigate("/canciones")}
 							>
 								Ver Canciones

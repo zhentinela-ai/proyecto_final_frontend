@@ -24,11 +24,10 @@ function App() {
 		setMenu(menu.checked);
 	};
 
-	window.onresize = (e) => {
-		setMain(e.target.innerWidth);
-	};
-
 	useEffect(() => {
+		window.onresize = (e) => {
+			setMain(e.target.innerWidth);
+		};
 		if (main > 820) {
 			setMenu(false);
 		} else {
@@ -41,17 +40,29 @@ function App() {
 			position: "absolute",
 			top: "400px",
 		},
+		footer: {
+			position: "absolute",
+			zIndex: -1,
+			width: "100%",
+		},
 	};
 
 	return (
 		<div className="font-family-joan vh-100" id="main">
 			<BrowserRouter>
 				<ModalProvider>
-					<Navegacion abrirMenu={abrirMenu} />
+					<Navegacion
+						abrirMenu={abrirMenu}
+						setMenu={setMenu}
+						menu={menu}
+					/>
 					<BotonContacto />
 				</ModalProvider>
 
-				<div className="container" style={menu ? styles.container : {}}>
+				<div
+					className="container d-flex"
+					style={menu ? styles.container : {}}
+				>
 					<Routes>
 						<Route path="/" element={<Inicio />} />
 						<Route path="/canciones" element={<Canciones />} />
@@ -61,8 +72,8 @@ function App() {
 							element={<InicioSesion />}
 						/>
 					</Routes>
+					<PiePagina style={menu ? styles.footer : {}} />
 				</div>
-				<PiePagina />
 			</BrowserRouter>
 		</div>
 	);

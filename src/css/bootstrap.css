@@ -103,6 +103,8 @@ select {
 }
 
 .container {
+	position: relative;
+	display: flex;
 	flex-direction: column;
 	margin: 5px auto;
 	padding: 10px;
@@ -198,51 +200,51 @@ select {
 	width: 100%;
 }
 
-.col-md-1 {
+.col-lg-1 {
 	width: calc(100% / 12);
 }
 
-.col-md-2 {
+.col-lg-2 {
 	width: calc(2 * 100% / 12);
 }
 
-.col-md-3 {
+.col-lg-3 {
 	width: calc(3 * 100% / 12);
 }
 
-.col-md-4 {
+.col-lg-4 {
 	width: calc(4 * 100% / 12);
 }
 
-.col-md-5 {
+.col-lg-5 {
 	width: calc(5 * 100% / 12);
 }
 
-.col-md-6 {
+.col-lg-6 {
 	width: calc(6 * 100% / 12);
 }
 
-.col-md-7 {
+.col-lg-7 {
 	width: calc(7 * 100% / 12);
 }
 
-.col-md-8 {
+.col-lg-8 {
 	width: calc(8 * 100% / 12);
 }
 
-.col-md-9 {
+.col-lg-9 {
 	width: calc(9 * 100% / 12);
 }
 
-.col-md-10 {
+.col-lg-10 {
 	width: calc(10 * 100% / 12);
 }
 
-.col-md-11 {
+.col-lg-11 {
 	width: calc(11 * 100% / 12);
 }
 
-.col-md-12 {
+.col-lg-12 {
 	width: 100%;
 }
 
@@ -470,6 +472,9 @@ a {
 		padding: 1px;
 		border: none;
 	}
+	.w-30 {
+		width: 60%;
+	}
 	.card-header {
 		justify-content: center;
 		justify-content: flex-start;
@@ -478,9 +483,6 @@ a {
 		flex-direction: column;
 		justify-content: center;
 		gap: 10px;
-	}
-	.carrusel {
-		margin: 0;
 	}
 	.name {
 		visibility: hidden;
@@ -505,6 +507,7 @@ a {
 	}
 
 	.carrusel {
+		margin: 0;
 		width: 50vw;
 	}
 	.carrusel-item {
@@ -565,13 +568,13 @@ a {
 		justify-content: flex-end;
 	}
 	.pl-6 {
-		padding: 5px;
+		padding: 6px;
 	}
 	.pl-6 a {
 		justify-content: flex-start;
 	}
 	.pr-6 {
-		padding: 5px;
+		padding: 6px;
 	}
 	.pr-6 a {
 		justify-content: flex-start;
@@ -605,10 +608,75 @@ a {
 	.btn {
 		height: 48px;
 		width: 170px;
-		font-size: 25px;
+		font-size: 20px;
 		border-radius: 10px;
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) and (min-width: 821px) {
+	.col-md-6 {
+		width: 50%;
+	}
+
+	.carrusel {
+		margin: 0;
+		width: 400px;
+	}
+	.carrusel-item {
+		height: 100%;
+	}
+	img {
+		height: 33vw;
+		width: 250px;
+	}
+	@keyframes deslizar {
+		0% {
+			margin-left: 0;
+		}
+		20% {
+			margin-left: 0;
+		}
+
+		25% {
+			margin-left: -101%;
+		}
+		45% {
+			margin-left: -101%;
+		}
+
+		50% {
+			margin-left: -202%;
+		}
+		70% {
+			margin-left: -202%;
+		}
+
+		75% {
+			margin-left: -304%;
+		}
+		100% {
+			margin-left: -304%;
+		}
+	}
+	.pl-6 {
+		padding: 6px;
+	}
+	.pr-6 {
+		padding: 6px;
+	}
+	.logo {
+		padding: 0;
+	}
+	.titulo-h1 {
+		padding: 0;
+	}
+	.justify-content-between {
+		justify-content: space-around;
+	}
+	#registro {
+		display: none;
+	}
+	#inicio_sesion {
+		display: none;
+	}
 }

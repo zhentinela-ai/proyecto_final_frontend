@@ -2,7 +2,7 @@ import { useState } from "react";
 import { validarGenero } from "../js/validaciones";
 
 export function Genero() {
-	const [seleccionar, setSeleccionar] = useState(false);
+	const [seleccionar, setSeleccionar] = useState(true);
 
 	return (
 		<div className="form-group">

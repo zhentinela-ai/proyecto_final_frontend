@@ -6,8 +6,24 @@ import reel_4 from "../images/reel_4.jpg";
 import datos from "../datos.json";
 import { useNavigate } from "react-router-dom";
 
-const canciones = datos.canciones;
-const top3 = canciones.filter((dato) => dato.reproducciones >= 70);
+import { canciones } from "../js/statics";
+
+const songs = datos.canciones;
+const top3 = songs.filter((dato) => dato.reproducciones >= 70);
+const canciones_filtradas = []
+
+for (let i = 0; i < canciones.length; i++) {
+	for (let j = 0; j < top3.length; j++) {
+		if (canciones[i][`${top3[j].ruta}`]) {
+			canciones_filtradas.push(canciones[i][`${top3[j].ruta}`])
+		}
+	}
+}
+console.log(canciones_filtradas);
+
+//  = canciones.filter((cancion, i) => {
+// 	return cancion[`${top3[0].ruta}`];
+// });
 
 export default function Inicio() {
 	const navigate = useNavigate();
@@ -66,7 +82,7 @@ export default function Inicio() {
 									<td className="name">{top.nombre}</td>
 									<td>
 										<audio
-											src={`./canciones/${top.ruta}`}
+											src={`${canciones_filtradas[i]}`}
 											controls
 										></audio>
 									</td>
